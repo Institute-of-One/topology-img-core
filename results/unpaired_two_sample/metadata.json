@@ -1,0 +1,26 @@
+{
+  "config": {
+    "name": "unpaired_two_sample",
+    "root_seed": 20260905,
+    "matrix_size": 128,
+    "background": 0.0,
+    "lesion_amplitude": 1.0,
+    "lesion_sigma_px": 5.0,
+    "sigma_min": 0.25,
+    "sigma_max": 20.0,
+    "n_sigma": 100,
+    "n_per_group": 64,
+    "homology_dimension": 0,
+    "birth_min_normalized": -5.0,
+    "birth_max_normalized": 5.0,
+    "persistence_min_normalized": 0.0,
+    "persistence_max_normalized": 8.0,
+    "persistence_image_resolution": 32,
+    "gaussian_bandwidth": 0.15,
+    "n_permutations": 999,
+    "fdr_q": 0.05,
+    "association_bootstrap_resamples": 2000
+  },
+  "config_sha256": "86e86d1f7f4617384c6db503680311c7017459ff1fbf2bf0eeb7dad8ab48008b",
+  "freeze_commit": "0e83e8c0f7783711a9e62d8b02369a634b764b0f"
+}

@@ -1,0 +1,12 @@
+{
+  "association": {
+    "rho": 0.8409073071100158,
+    "p": 7.01642180733465e-28,
+    "ci_low": 0.7507857320358367,
+    "ci_high": 0.8973023201617234
+  },
+  "significant_fraction_dprime_ge_2": 0.6,
+  "significant_fraction_dprime_le_0_5": 0.0,
+  "survives_unpaired_validation": true,
+  "complete_sigma_levels": 100
+}
