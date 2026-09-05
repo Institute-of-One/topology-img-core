@@ -27,6 +27,12 @@ survives independent-ensemble validation.
 
 ## Interpretation
 
+For publication, the unpaired value rho=0.841 (95% CI 0.751 to 0.897) is the
+primary association because it represents the independent-ensemble situation an
+observer actually faces. The paired value rho approximately 0.994 is a mechanistic
+measurement that isolates the lesion contribution under a shared noise realization;
+it must not be presented as the headline performance or association estimate.
+
 The earlier rho of approximately 0.994 was strengthened by sharing the noise field,
 but it was not created by that pairing. Removing the pairing reduced the association
 to rho approximately 0.841 and produced considerable pointwise variability around

@@ -1,4 +1,4 @@
-# IORN-010 — A Topological Phase Transition in Medical Image Detectability
+# IORN-010 — A nonlinear topological crossover accompanying loss of detectability
 
 Minimal, preregistered-style Phase-0 proof of concept. A fixed Gaussian lesion is
 embedded in a 128×128 uniform field and degraded only by additive white Gaussian
