@@ -86,8 +86,10 @@ def run(config_path: Path, output: Path) -> dict:
     meta = {"config": cfg, "config_sha256": hashlib.sha256(config_path.read_bytes()).hexdigest(),
             "freeze_commit": "0e83e8c0f7783711a9e62d8b02369a634b764b0f"}
     (output / "metadata.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
-    fig, ax = plt.subplots(figsize=(6, 4)); ax.plot(sigmas, energy); ax.scatter(sigmas[rejected], energy[rejected], s=16, label="BH-FDR q=0.05")
-    ax.set(xscale="log", yscale="log", xlabel="Noise σ", ylabel="Unpaired persistence-image energy distance")
+    fig, ax = plt.subplots(figsize=(6, 4)); ax.plot(sigmas, energy)
+    ax.scatter(sigmas[rejected], energy[rejected], s=18, color="tab:red", label="BH-FDR q=0.05")
+    ax.set(xscale="log", yscale="symlog", ylim=(-0.01, None),
+           xlabel="Noise σ", ylabel="Unpaired persistence-image energy distance")
     ax.legend(); fig.tight_layout(); (output / "figures").mkdir(exist_ok=True)
     fig.savefig(output / "figures" / "figure_I_unpaired_energy.png", dpi=180); plt.close(fig)
     print(json.dumps(analysis, indent=2)); return analysis
