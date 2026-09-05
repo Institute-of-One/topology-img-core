@@ -1,0 +1,26 @@
+{
+  "config": {
+    "name": "poc_noise_sweep",
+    "root_seed": 20260830,
+    "matrix_size": 128,
+    "background": 0.0,
+    "lesion_amplitude": 1.0,
+    "lesion_sigma_px": 5.0,
+    "sigma_min": 0.25,
+    "sigma_max": 20.0,
+    "n_sigma": 100,
+    "n_observer_pairs": 256,
+    "n_topology_pairs": 16,
+    "persistence_threshold_fraction": 0.1,
+    "bootstrap_resamples": 500,
+    "task_threshold_dprime": 1.0
+  },
+  "config_sha256": "eaf66efca9f45841d417eed901f6ed57e42ffebef945eb19a652a4c1c653f7ff",
+  "python": "3.14.3",
+  "numpy": "2.5.2",
+  "scipy": "1.18.1",
+  "gudhi": "3.13.0",
+  "filtration": "superlevel cubical (-image)",
+  "pairing": "identical noise field for absent and present image",
+  "essential_classes": "excluded from finite summaries"
+}

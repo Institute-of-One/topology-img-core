@@ -1,0 +1,16 @@
+[experiment]
+name = "poc_noise_sweep"
+root_seed = 20260830
+matrix_size = 128
+background = 0.0
+lesion_amplitude = 1.0
+lesion_sigma_px = 5.0
+sigma_min = 0.25
+sigma_max = 20.0
+n_sigma = 100
+n_observer_pairs = 256
+n_topology_pairs = 16
+persistence_threshold_fraction = 0.10
+bootstrap_resamples = 500
+task_threshold_dprime = 1.0
+

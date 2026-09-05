@@ -1,0 +1,193 @@
+{
+  "task_threshold_dprime": 1.0,
+  "sigma_task": 8.866374116451162,
+  "observer_relative_rmse": 0.04225170347564856,
+  "metrics": {
+    "h0_persistence_entropy_delta": {
+      "spearman_vs_dprime": {
+        "rho": 0.9057305730573055,
+        "p": 2.5969292524279184e-38,
+        "ci_low": 0.8411659333030274,
+        "ci_high": 0.9461521594873723
+      },
+      "segmented_fit": {
+        "breakpoint": 0.723261182399108,
+        "rss_linear": 2.14041344015943,
+        "rss_piecewise": 0.14010355271628397,
+        "delta_aic_piecewise_minus_linear": -268.63724742389087
+      },
+      "dynamic_range": 0.0030374004859999304
+    },
+    "h0_n_persistent_delta": {
+      "spearman_vs_dprime": {
+        "rho": 0.7876173994827296,
+        "p": 2.492105150428333e-22,
+        "ci_low": 0.6927747560106836,
+        "ci_high": 0.8667183648630324
+      },
+      "segmented_fit": {
+        "breakpoint": 0.6333237337639321,
+        "rss_linear": 1.8639328364969463,
+        "rss_piecewise": 0.3633669730129134,
+        "delta_aic_piecewise_minus_linear": -159.5030694130823
+      },
+      "dynamic_range": 4.75
+    },
+    "h1_persistence_entropy_delta": {
+      "spearman_vs_dprime": {
+        "rho": 0.8466726672667266,
+        "p": 1.331281992110616e-28,
+        "ci_low": 0.7501412899185972,
+        "ci_high": 0.917674517712184
+      },
+      "segmented_fit": {
+        "breakpoint": 0.5545699969936373,
+        "rss_linear": 1.8228860546473247,
+        "rss_piecewise": 0.3411005409815983,
+        "delta_aic_piecewise_minus_linear": -163.59989930030883
+      },
+      "dynamic_range": 0.0011353184805810157
+    },
+    "h1_n_persistent_delta": {
+      "spearman_vs_dprime": {
+        "rho": 0.6249365825577355,
+        "p": 3.672500569925737e-12,
+        "ci_low": 0.46653835793348525,
+        "ci_high": 0.7536286060278754
+      },
+      "segmented_fit": {
+        "breakpoint": 0.6619861368850231,
+        "rss_linear": 2.6918473600531905,
+        "rss_piecewise": 1.269096380630091,
+        "delta_aic_piecewise_minus_linear": -71.19225729460595
+      },
+      "dynamic_range": 3.1875
+    },
+    "h0_bottleneck_normalized": {
+      "spearman_vs_dprime": {
+        "rho": 0.9943714371437142,
+        "p": 2.331288139199328e-97,
+        "ci_low": 0.9875484007889578,
+        "ci_high": 0.9958709338833867
+      },
+      "segmented_fit": {
+        "breakpoint": 1.6043958069947517,
+        "rss_linear": 1.983079381637341,
+        "rss_piecewise": 0.14547381543003066,
+        "delta_aic_piecewise_minus_linear": -257.2410051065329
+      },
+      "dynamic_range": 0.9577388318588443
+    },
+    "h0_total_persistence_delta_normalized": {
+      "spearman_vs_dprime": {
+        "rho": -0.9755175517551754,
+        "p": 2.870878125524216e-66,
+        "ci_low": -0.9873113709327167,
+        "ci_high": -0.9498594682979618
+      },
+      "segmented_fit": {
+        "breakpoint": 0.755993894701798,
+        "rss_linear": 559394.2177820964,
+        "rss_piecewise": 33375.376992010984,
+        "delta_aic_piecewise_minus_linear": -277.9036031953144
+      },
+      "dynamic_range": 9.925366773562939
+    },
+    "h0_max_persistence_delta_normalized": {
+      "spearman_vs_dprime": {
+        "rho": 0.708118811881188,
+        "p": 1.7353214988468711e-16,
+        "ci_low": 0.5541595993026691,
+        "ci_high": 0.8203300897697902
+      },
+      "segmented_fit": {
+        "breakpoint": 0.9859549581345319,
+        "rss_linear": 3.1240266757008914,
+        "rss_piecewise": 1.176171217698441,
+        "delta_aic_piecewise_minus_linear": -93.68583387379857
+      },
+      "dynamic_range": 0.26574765037078146
+    },
+    "h0_landscape_l2_delta_normalized": {
+      "spearman_vs_dprime": {
+        "rho": -0.8254545454545454,
+        "p": 4.438299437659502e-26,
+        "ci_low": -0.8883156040869569,
+        "ci_high": -0.7380458152425413
+      },
+      "segmented_fit": {
+        "breakpoint": 0.4068126524842311,
+        "rss_linear": 1296.3630021217068,
+        "rss_piecewise": 186.55649886023653,
+        "delta_aic_piecewise_minus_linear": -189.85837957666163
+      },
+      "dynamic_range": 0.0775658112714581
+    },
+    "h1_bottleneck_normalized": {
+      "spearman_vs_dprime": {
+        "rho": 0.9957995799579957,
+        "p": 1.42588105364605e-103,
+        "ci_low": 0.9903091905267296,
+        "ci_high": 0.9973710942363831
+      },
+      "segmented_fit": {
+        "breakpoint": 1.0305764320548887,
+        "rss_linear": 1.4869726730464037,
+        "rss_piecewise": 0.07403707708602227,
+        "delta_aic_piecewise_minus_linear": -295.99315596251364
+      },
+      "dynamic_range": 1.121060349267828
+    },
+    "h1_total_persistence_delta_normalized": {
+      "spearman_vs_dprime": {
+        "rho": -0.9681488148814881,
+        "p": 9.571499425284018e-61,
+        "ci_low": -0.9882950571891684,
+        "ci_high": -0.9302813495833695
+      },
+      "segmented_fit": {
+        "breakpoint": 0.8259705267264483,
+        "rss_linear": 80308.47302979369,
+        "rss_piecewise": 4588.732685226775,
+        "delta_aic_piecewise_minus_linear": -282.2271250056704
+      },
+      "dynamic_range": 9.384128565642259
+    },
+    "h1_max_persistence_delta_normalized": {
+      "spearman_vs_dprime": {
+        "rho": 0.04153615361536153,
+        "p": 0.6815737411121152,
+        "ci_low": -0.1849383629688715,
+        "ci_high": 0.26095406270615173
+      },
+      "segmented_fit": {
+        "breakpoint": 0.46458356818873886,
+        "rss_linear": 51.90755156529421,
+        "rss_piecewise": 48.71891156439429,
+        "delta_aic_piecewise_minus_linear": -2.339699928910491
+      },
+      "dynamic_range": 0.05442940774094229
+    },
+    "h1_landscape_l2_delta_normalized": {
+      "spearman_vs_dprime": {
+        "rho": -0.9170597059705969,
+        "p": 6.466413555062522e-41,
+        "ci_low": -0.9570514989621324,
+        "ci_high": -0.8556227345571031
+      },
+      "segmented_fit": {
+        "breakpoint": 1.1259690909964377,
+        "rss_linear": 27623.164081631912,
+        "rss_piecewise": 2318.27376323253,
+        "delta_aic_piecewise_minus_linear": -243.78318578956208
+      },
+      "dynamic_range": 0.08735523522669948
+    }
+  },
+  "primary_h0_bottleneck_normalized": {
+    "breakpoint_ci_low": 1.4684705997686274,
+    "breakpoint_ci_high": 1.752902581711826,
+    "half_max_sigma": 0.7096527430210189,
+    "ten_percent_sigma": 4.242486073251946
+  }
+}

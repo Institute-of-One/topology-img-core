@@ -1,0 +1,93 @@
+{
+  "conditions": {
+    "size_64_lesion_3": {
+      "breakpoint": 1.6,
+      "rss_linear": 0.2683024251601589,
+      "rss_piecewise": 0.03160197803041491,
+      "delta_aic_piecewise_minus_linear": -32.361216391356464,
+      "breakpoint_ci_low": 1.25,
+      "breakpoint_ci_high": 1.6,
+      "dprime_at_breakpoint": 3.3233509704478426
+    },
+    "size_64_lesion_5": {
+      "breakpoint": 2.0,
+      "rss_linear": 0.24234413794772808,
+      "rss_piecewise": 0.028806910318787512,
+      "delta_aic_piecewise_minus_linear": -32.20563905188767,
+      "breakpoint_ci_low": 1.6,
+      "breakpoint_ci_high": 2.0,
+      "dprime_at_breakpoint": 4.4311346272637895
+    },
+    "size_64_lesion_7": {
+      "breakpoint": 2.5,
+      "rss_linear": 0.22435140129810843,
+      "rss_piecewise": 0.037729403193351094,
+      "delta_aic_piecewise_minus_linear": -26.307155661055432,
+      "breakpoint_ci_low": 2.0,
+      "breakpoint_ci_high": 2.5,
+      "dprime_at_breakpoint": 4.962870782067564
+    },
+    "size_96_lesion_3": {
+      "breakpoint": 1.25,
+      "rss_linear": 0.3599572171519468,
+      "rss_piecewise": 0.0241781223435696,
+      "delta_aic_piecewise_minus_linear": -41.90912890236683,
+      "breakpoint_ci_low": 1.25,
+      "breakpoint_ci_high": 1.6,
+      "dprime_at_breakpoint": 4.253889242173239
+    },
+    "size_96_lesion_5": {
+      "breakpoint": 2.0,
+      "rss_linear": 0.3082341219872668,
+      "rss_piecewise": 0.04263683893670166,
+      "delta_aic_piecewise_minus_linear": -29.62839678212258,
+      "breakpoint_ci_low": 1.6,
+      "breakpoint_ci_high": 2.0,
+      "dprime_at_breakpoint": 4.4311346272637895
+    },
+    "size_96_lesion_7": {
+      "breakpoint": 2.0,
+      "rss_linear": 0.29496773259929016,
+      "rss_piecewise": 0.037404607013805914,
+      "delta_aic_piecewise_minus_linear": -31.106225535379096,
+      "breakpoint_ci_low": 1.6,
+      "breakpoint_ci_high": 2.0,
+      "dprime_at_breakpoint": 6.203588478169305
+    },
+    "size_128_lesion_3": {
+      "breakpoint": 1.25,
+      "rss_linear": 0.3343678313474516,
+      "rss_piecewise": 0.010802320396478283,
+      "delta_aic_piecewise_minus_linear": -54.35217216997536,
+      "breakpoint_ci_low": 1.0,
+      "breakpoint_ci_high": 1.25,
+      "dprime_at_breakpoint": 4.253889242173239
+    },
+    "size_128_lesion_5": {
+      "breakpoint": 1.6,
+      "rss_linear": 0.32638378036549875,
+      "rss_piecewise": 0.03464634833959514,
+      "delta_aic_piecewise_minus_linear": -34.12898713692893,
+      "breakpoint_ci_low": 1.6,
+      "breakpoint_ci_high": 2.0,
+      "dprime_at_breakpoint": 5.538918284079737
+    },
+    "size_128_lesion_7": {
+      "breakpoint": 1.6,
+      "rss_linear": 0.3380877215589101,
+      "rss_piecewise": 0.03356997577820241,
+      "delta_aic_piecewise_minus_linear": -35.26444616101922,
+      "breakpoint_ci_low": 1.6,
+      "breakpoint_ci_high": 2.0,
+      "dprime_at_breakpoint": 7.754485597711632
+    }
+  },
+  "summary": {
+    "breakpoint_min": 1.25,
+    "breakpoint_max": 2.5,
+    "dprime_at_breakpoint_min": 3.3233509704478426,
+    "dprime_at_breakpoint_max": 7.754485597711632,
+    "collapse_mean_sd_sigma_axis": 0.03713848408753997,
+    "collapse_mean_sd_dprime_axis": 0.07472878927039725
+  }
+}
