@@ -1,0 +1,40 @@
+{
+  "config": {
+    "name": "refined_sigma_grid",
+    "root_seed": 20260906,
+    "matrix_size": 128,
+    "background": 0.0,
+    "lesion_amplitude": 1.0,
+    "lesion_sigma_px": 5.0,
+    "dense_sigmas": [
+      1.0,
+      1.1,
+      1.2,
+      1.3,
+      1.4,
+      1.5,
+      1.6,
+      1.7,
+      1.8,
+      1.9,
+      2.0,
+      2.1,
+      2.2,
+      2.3,
+      2.4,
+      2.5
+    ],
+    "anchor_sigmas": [
+      0.5,
+      0.75,
+      3.0,
+      4.0,
+      8.0
+    ],
+    "n_pairs_dense": 64,
+    "n_pairs_anchor": 16,
+    "bootstrap_resamples": 500
+  },
+  "config_sha256": "e975307f245557316dc3cf86c4726d212a558ae6096e9889f096da85266f5f4d",
+  "freeze_commit": "0e83e8c0f7783711a9e62d8b02369a634b764b0f"
+}
