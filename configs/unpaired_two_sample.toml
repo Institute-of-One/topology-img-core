@@ -1,0 +1,22 @@
+[experiment]
+name = "unpaired_two_sample"
+root_seed = 20260905
+matrix_size = 128
+background = 0.0
+lesion_amplitude = 1.0
+lesion_sigma_px = 5.0
+sigma_min = 0.25
+sigma_max = 20.0
+n_sigma = 100
+n_per_group = 64
+homology_dimension = 0
+birth_min_normalized = -5.0
+birth_max_normalized = 5.0
+persistence_min_normalized = 0.0
+persistence_max_normalized = 8.0
+persistence_image_resolution = 32
+gaussian_bandwidth = 0.15
+n_permutations = 999
+fdr_q = 0.05
+association_bootstrap_resamples = 2000
+
