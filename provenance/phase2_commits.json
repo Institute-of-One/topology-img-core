@@ -11,5 +11,6 @@
   "refined_n64_n96_data_commit": "83b89141b87ef2d417211c9e55ff15acef9a84bc",
   "scaling_precision_amendment_commit": "cc961f9be19ad557aaaf09c7596c4fd3989aead2",
   "scaling_precision_amendment_path": "docs/phase2_scaling_precision_amendment_v1.0.md",
-  "scaling_precision_data_commit": "be930fa05590743aa5698aede7c2145330af487e"
+  "scaling_precision_data_commit": "be930fa05590743aa5698aede7c2145330af487e",
+  "n192_resource_data_commit": "13a856cb32b32b99cf99f213c9e4da8860dcdac0"
 }
