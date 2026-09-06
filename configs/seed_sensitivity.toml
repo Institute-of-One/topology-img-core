@@ -1,0 +1,9 @@
+[experiment]
+existing_seed = 20260906
+additional_seeds = [20260916, 20260926, 20261006, 20261016]
+within_run_bootstrap_resamples = 500
+run_level_bootstrap_resamples = 10000
+heterogeneity_alpha = 0.05
+material_tau_threshold = 0.10
+amendment_commit = "416883ebe974924f6054c0b635b5741fb0c5caf7"
+

@@ -29,8 +29,10 @@ def write_csv(path: Path, rows: list[dict]) -> None:
         writer = csv.DictWriter(f, fieldnames=list(rows[0])); writer.writeheader(); writer.writerows(rows)
 
 
-def run(config_path: Path, output: Path) -> dict:
+def run(config_path: Path, output: Path, root_seed_override: int | None = None) -> dict:
     with config_path.open("rb") as f: cfg = tomllib.load(f)["experiment"]
+    if root_seed_override is not None:
+        cfg = dict(cfg); cfg["root_seed"] = int(root_seed_override)
     dense = np.array(cfg["dense_sigmas"], float); anchors = np.array(cfg["anchor_sigmas"], float)
     sigmas = np.sort(np.concatenate([dense, anchors])); signal = gaussian_lesion(
         int(cfg["matrix_size"]), cfg["lesion_amplitude"], cfg["lesion_sigma_px"])
@@ -86,4 +88,3 @@ if __name__ == "__main__":
     parser=argparse.ArgumentParser(); parser.add_argument("--config",type=Path,required=True)
     parser.add_argument("--output",type=Path,default=Path("results/refined_sigma_grid")); args=parser.parse_args()
     run(args.config,args.output)
-
