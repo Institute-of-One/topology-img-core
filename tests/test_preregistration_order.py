@@ -91,3 +91,16 @@ def test_scaling_precision_amendment_is_frozen_before_extension_data():
     assert git("merge-base", "--is-ancestor", amendment, data).returncode == 0, (
         f"Scaling-precision amendment {amendment} must precede extension data {data}."
     )
+
+
+def test_resource_gate_decision_precedes_n256_data():
+    provenance = json.loads((ROOT / "provenance" / "phase2_commits.json").read_text(encoding="utf-8"))
+    decision = provenance["resource_gate_decision_commit"]
+    data = provenance["n256_data_commit"]
+    for commit in (decision, data):
+        assert git("cat-file", "-e", f"{commit}^{{commit}}").returncode == 0, (
+            f"Required commit {commit} is unavailable. CI must checkout with fetch-depth: 0."
+        )
+    assert git("merge-base", "--is-ancestor", decision, data).returncode == 0, (
+        f"Resource-gate decision {decision} must precede N=256 data {data}."
+    )
