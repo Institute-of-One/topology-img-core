@@ -1,0 +1,7 @@
+{
+  "base": "results\\refined_sigma_grid_n96",
+  "matrix_size": 96,
+  "root_seed": 20261096,
+  "amendment_commit": "cc961f9be19ad557aaaf09c7596c4fd3989aead2",
+  "stream_label": "scaling-precision-extension|sigma={sigma:.2f}|replicate={replicate}"
+}

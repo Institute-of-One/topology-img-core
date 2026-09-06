@@ -1,0 +1,19 @@
+{
+  "breakpoint_sigma": 1.6,
+  "rss_linear": 0.16991364270277964,
+  "rss_piecewise": 0.01027107090847802,
+  "delta_aic_piecewise_minus_linear": -60.53705768920602,
+  "breakpoint_ci_low": 1.4,
+  "breakpoint_ci_high": 1.7,
+  "breakpoint_ci_width": 0.30000000000000004,
+  "matrix_size": 64,
+  "breakpoint_candidate_low": 0.8,
+  "breakpoint_candidate_high": 2.5,
+  "breakpoint_interval_touches_boundary": false,
+  "precision_adequate": true,
+  "dprime_at_breakpoint": 5.538918284079736,
+  "extension_realizations": 128,
+  "extension_wall_time_seconds": 6.107731100055389,
+  "complete_realizations": 1232,
+  "amendment_commit": "cc961f9be19ad557aaaf09c7596c4fd3989aead2"
+}
