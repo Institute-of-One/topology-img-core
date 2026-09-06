@@ -1,0 +1,14 @@
+{
+  "breakpoint_sigma": 1.3,
+  "rss_linear": 0.26009694626078933,
+  "rss_piecewise": 0.00809965064656415,
+  "delta_aic_piecewise_minus_linear": -68.85390352217696,
+  "breakpoint_ci_low": 1.1475000000000002,
+  "breakpoint_ci_high": 1.5,
+  "breakpoint_ci_width": 0.3524999999999998,
+  "dprime_at_breakpoint": 6.817130195790447,
+  "grid_spacing": 0.1,
+  "ci_narrower_than_grid": false,
+  "complete_realizations": 1104,
+  "wall_time_seconds": 293.33057969994843
+}
