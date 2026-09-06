@@ -66,3 +66,28 @@ def test_resource_gate_precedes_n192_data_when_registered():
     assert git("merge-base", "--is-ancestor", freeze, data).returncode == 0, (
         f"Resource-gate freeze {freeze} must precede N=192 data {data}."
     )
+
+
+def test_resource_gate_precedes_refined_calibration_data():
+    provenance = json.loads((ROOT / "provenance" / "phase2_commits.json").read_text(encoding="utf-8"))
+    freeze = provenance["resource_gate_commit"]
+    data = provenance["refined_n64_n96_data_commit"]
+    assert git("merge-base", "--is-ancestor", freeze, data).returncode == 0, (
+        f"Resource-gate freeze {freeze} must precede calibration data {data}."
+    )
+
+
+def test_scaling_precision_amendment_is_frozen_before_extension_data():
+    provenance = json.loads((ROOT / "provenance" / "phase2_commits.json").read_text(encoding="utf-8"))
+    amendment = provenance["scaling_precision_amendment_commit"]
+    data = provenance["scaling_precision_data_commit"]
+    for commit in (amendment, data):
+        assert git("cat-file", "-e", f"{commit}^{{commit}}").returncode == 0, (
+            f"Required commit {commit} is unavailable. CI must checkout with fetch-depth: 0."
+        )
+    changed = git("diff-tree", "--no-commit-id", "--name-only", "-r", amendment)
+    assert changed.returncode == 0, changed.stderr
+    assert changed.stdout.splitlines() == [provenance["scaling_precision_amendment_path"]]
+    assert git("merge-base", "--is-ancestor", amendment, data).returncode == 0, (
+        f"Scaling-precision amendment {amendment} must precede extension data {data}."
+    )

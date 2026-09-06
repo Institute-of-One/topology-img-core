@@ -7,5 +7,9 @@
   "boundary_amendment_v1_2_commit": "419c37ba1d47a4aebf40c2be1b1a3a05be293000",
   "seed_sensitivity_data_commit": "cbe4d415ab833b4871f4076be9f1673ab5936f3b",
   "resource_gate_commit": "6739705fb5e4238d8c08a442cc7f498a65d7a285",
-  "resource_gate_path": "docs/phase2_resource_gate_supplement.md"
+  "resource_gate_path": "docs/phase2_resource_gate_supplement.md",
+  "refined_n64_n96_data_commit": "83b89141b87ef2d417211c9e55ff15acef9a84bc",
+  "scaling_precision_amendment_commit": "cc961f9be19ad557aaaf09c7596c4fd3989aead2",
+  "scaling_precision_amendment_path": "docs/phase2_scaling_precision_amendment_v1.0.md",
+  "scaling_precision_data_commit": "be930fa05590743aa5698aede7c2145330af487e"
 }
