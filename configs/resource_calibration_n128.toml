@@ -1,7 +1,7 @@
 [experiment]
-name = "refined_sigma_grid_n192"
-root_seed = 20261192
-matrix_size = 192
+name = "resource_calibration_n128"
+root_seed = 20260906
+matrix_size = 128
 background = 0.0
 lesion_amplitude = 1.0
 lesion_sigma_px = 5.0
