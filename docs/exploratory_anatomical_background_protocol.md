@@ -74,3 +74,22 @@ as a disappointment or the unexpected one as a triumph.
 The three series are public and de-identified under their stated licences. Their UIDs,
 collections and licences are recorded with the results. Patches are derived data and are not
 redistributed; the extraction script plus the UIDs reproduce them from the archive.
+
+---
+
+## Not executed — recorded 2026-09-06, the same day it was frozen
+
+**This protocol was frozen and then not run.** No background patch was extracted, no
+topology was computed under it, and no result exists that is being withheld.
+
+The project was shelved the same day on a scope judgement, not on anything observed. The
+registered study has no practical consequence: it changes no clinical, dosimetric or
+regulatory practice, its object is a Gaussian lesion in a uniform field, and its citation
+audience is small. Effort moved to IORN-011, which reaches existing clinical scans at no
+additional dose.
+
+This note exists because a frozen protocol with no result attached is indistinguishable,
+from the outside, from a result that was hidden. It was not hidden. It was never produced.
+
+If the work resumes, this protocol still stands as frozen: its decision rule and its
+written-down expectation predate any data and were not revised on the way out.
