@@ -29,3 +29,13 @@ def test_freeze_commit_contains_only_preregistration():
     assert changed.returncode == 0, changed.stderr
     assert changed.stdout.splitlines() == [provenance["preregistration_path"]]
 
+
+def test_seed_amendments_precede_seed_data():
+    provenance = json.loads((ROOT / "provenance" / "phase2_commits.json").read_text(encoding="utf-8"))
+    data = provenance["seed_sensitivity_data_commit"]
+    for key in ("seed_amendment_v1_1_commit", "boundary_amendment_v1_2_commit"):
+        amendment = provenance[key]
+        assert git("cat-file", "-e", f"{amendment}^{{commit}}").returncode == 0
+        assert git("merge-base", "--is-ancestor", amendment, data).returncode == 0, (
+            f"Amendment {amendment} must precede seed data {data}."
+        )
