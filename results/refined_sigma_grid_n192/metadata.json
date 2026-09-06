@@ -1,0 +1,58 @@
+{
+  "config": {
+    "name": "refined_sigma_grid_n192",
+    "root_seed": 20261192,
+    "matrix_size": 192,
+    "background": 0.0,
+    "lesion_amplitude": 1.0,
+    "lesion_sigma_px": 5.0,
+    "dense_sigmas": [
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2,
+      1.3,
+      1.4,
+      1.5,
+      1.6,
+      1.7,
+      1.8,
+      1.9,
+      2.0,
+      2.1,
+      2.2,
+      2.3,
+      2.4,
+      2.5
+    ],
+    "anchor_sigmas": [
+      0.5,
+      0.75,
+      3.0,
+      4.0,
+      8.0
+    ],
+    "n_pairs_dense": 64,
+    "n_pairs_anchor": 16,
+    "bootstrap_resamples": 500
+  },
+  "config_sha256": "247060de77f67700c8db0571c3182d07785940ebb843c0ce3c8140f3eef7fb14",
+  "freeze_commit": "0e83e8c0f7783711a9e62d8b02369a634b764b0f",
+  "resource_gate_commit": "6739705fb5e4238d8c08a442cc7f498a65d7a285",
+  "code_commit": "99d2e67476d8c1778d6caff2f6d1f21170e91341",
+  "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "command": [
+    "experiments\\refined_sigma_grid.py",
+    "--config",
+    "configs\\refined_sigma_grid_n192.toml",
+    "--output",
+    "results\\refined_sigma_grid_n192"
+  ],
+  "resource_measurement": {
+    "wall_time_boundary": "before first sigma through end of breakpoint bootstrap",
+    "peak_rss_scope": "single fresh experiment process, including imports",
+    "method": "windows_peak_working_set"
+  }
+}

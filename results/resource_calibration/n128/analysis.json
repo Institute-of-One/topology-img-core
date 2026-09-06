@@ -1,0 +1,17 @@
+{
+  "breakpoint_sigma": 1.3,
+  "rss_linear": 0.25435864835466604,
+  "rss_piecewise": 0.01257916552865699,
+  "delta_aic_piecewise_minus_linear": -65.15417720136887,
+  "breakpoint_ci_low": 1.1,
+  "breakpoint_ci_high": 1.5,
+  "breakpoint_ci_width": 0.3999999999999999,
+  "dprime_at_breakpoint": 6.817130195790447,
+  "grid_spacing": 0.1,
+  "ci_narrower_than_grid": false,
+  "complete_realizations": 1232,
+  "wall_time_seconds": 310.21470030001365,
+  "peak_rss_bytes": 80769024,
+  "peak_rss_gib": 0.07522201538085938,
+  "resource_measurement_method": "windows_peak_working_set"
+}
