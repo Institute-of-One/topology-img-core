@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "iorn-010"
-version = "0.1.0"
+version = "0.3.0"
 description = "Minimal proof of concept relating task detectability to persistent homology"
 requires-python = ">=3.11"
 dependencies = [
