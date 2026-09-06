@@ -104,3 +104,23 @@ def test_resource_gate_decision_precedes_n256_data():
     assert git("merge-base", "--is-ancestor", decision, data).returncode == 0, (
         f"Resource-gate decision {decision} must precede N=256 data {data}."
     )
+
+
+def test_all_scaling_freezes_precede_scaling_outcome():
+    provenance = json.loads((ROOT / "provenance" / "phase2_commits.json").read_text(encoding="utf-8"))
+    data = provenance["finite_size_scaling_data_commit"]
+    freezes = (
+        provenance["freeze_commit"],
+        provenance["seed_amendment_v1_1_commit"],
+        provenance["boundary_amendment_v1_2_commit"],
+        provenance["resource_gate_commit"],
+        provenance["scaling_precision_amendment_commit"],
+    )
+    for commit in (*freezes, data):
+        assert git("cat-file", "-e", f"{commit}^{{commit}}").returncode == 0, (
+            f"Required commit {commit} is unavailable. CI must checkout with fetch-depth: 0."
+        )
+    for freeze in freezes:
+        assert git("merge-base", "--is-ancestor", freeze, data).returncode == 0, (
+            f"Scaling freeze {freeze} must precede scaling outcome {data}."
+        )
