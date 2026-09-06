@@ -6,6 +6,9 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import platform
+import subprocess
+import sys
 import time
 import tomllib
 
@@ -16,6 +19,60 @@ from iorn010.observers import ideal_dprime
 from iorn010.phantom import gaussian_lesion
 from iorn010.refined import bootstrap_breakpoint
 from iorn010.topology import bottleneck, persistence_diagrams
+
+
+def peak_rss_bytes() -> tuple[int, str]:
+    """Return the process-lifetime peak RSS using the native platform counter."""
+    import resource
+
+    usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    if platform.system() == "Darwin":
+        return int(usage), "resource.ru_maxrss_bytes"
+    if platform.system() != "Windows":
+        return int(usage * 1024), "resource.ru_maxrss_kib"
+
+    # Python's resource module is unavailable on standard Windows builds. This
+    # branch is replaced below at import time on Windows.
+    raise RuntimeError("Windows peak RSS counter unavailable")
+
+
+if platform.system() == "Windows":
+    import ctypes
+    from ctypes import wintypes
+
+    class PROCESS_MEMORY_COUNTERS(ctypes.Structure):
+        _fields_ = [
+            ("cb", wintypes.DWORD),
+            ("PageFaultCount", wintypes.DWORD),
+            ("PeakWorkingSetSize", ctypes.c_size_t),
+            ("WorkingSetSize", ctypes.c_size_t),
+            ("QuotaPeakPagedPoolUsage", ctypes.c_size_t),
+            ("QuotaPagedPoolUsage", ctypes.c_size_t),
+            ("QuotaPeakNonPagedPoolUsage", ctypes.c_size_t),
+            ("QuotaNonPagedPoolUsage", ctypes.c_size_t),
+            ("PagefileUsage", ctypes.c_size_t),
+            ("PeakPagefileUsage", ctypes.c_size_t),
+        ]
+
+    def peak_rss_bytes() -> tuple[int, str]:
+        counters = PROCESS_MEMORY_COUNTERS()
+        counters.cb = ctypes.sizeof(counters)
+        kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+        psapi = ctypes.WinDLL("psapi", use_last_error=True)
+        kernel32.GetCurrentProcess.restype = wintypes.HANDLE
+        psapi.GetProcessMemoryInfo.argtypes = [
+            wintypes.HANDLE,
+            ctypes.POINTER(PROCESS_MEMORY_COUNTERS),
+            wintypes.DWORD,
+        ]
+        psapi.GetProcessMemoryInfo.restype = wintypes.BOOL
+        handle = kernel32.GetCurrentProcess()
+        ok = psapi.GetProcessMemoryInfo(
+            handle, ctypes.byref(counters), counters.cb
+        )
+        if not ok:
+            raise ctypes.WinError()
+        return int(counters.PeakWorkingSetSize), "windows_peak_working_set"
 
 
 def atomic_npz(path: Path, **arrays: np.ndarray) -> None:
@@ -63,14 +120,30 @@ def run(config_path: Path, output: Path, root_seed_override: int | None = None) 
     fit["dprime_at_breakpoint"] = ideal_dprime(signal, fit["breakpoint_sigma"])
     fit["grid_spacing"] = 0.1; fit["ci_narrower_than_grid"] = fit["breakpoint_ci_width"] < 0.1
     fit["complete_realizations"] = len(raw_rows); fit["wall_time_seconds"] = time.perf_counter() - started
+    peak_bytes, peak_method = peak_rss_bytes()
+    fit["peak_rss_bytes"] = peak_bytes
+    fit["peak_rss_gib"] = peak_bytes / 1024**3
+    fit["resource_measurement_method"] = peak_method
     means = np.array([g.mean() for g in groups_h0]); ses = np.array([g.std(ddof=1)/np.sqrt(len(g)) for g in groups_h0])
     agg = [{"sigma": float(s), "n_pairs": len(g), "dprime_analytic": ideal_dprime(signal, float(s)),
             "h0_bottleneck_normalized": float(m), "h0_standard_error": float(se)}
            for s, g, m, se in zip(sigmas, groups_h0, means, ses)]
     write_csv(output / "data" / "refined_sigma_raw.csv", raw_rows); write_csv(output / "data" / "refined_sigma_aggregate.csv", agg)
     output.mkdir(parents=True, exist_ok=True); (output / "analysis.json").write_text(json.dumps(fit, indent=2), encoding="utf-8")
+    code_commit = subprocess.run(
+        ["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=True
+    ).stdout.strip()
     metadata = {"config": cfg, "config_sha256": hashlib.sha256(config_path.read_bytes()).hexdigest(),
-                "freeze_commit": "0e83e8c0f7783711a9e62d8b02369a634b764b0f"}
+                "freeze_commit": "0e83e8c0f7783711a9e62d8b02369a634b764b0f",
+                "resource_gate_commit": "6739705fb5e4238d8c08a442cc7f498a65d7a285",
+                "code_commit": code_commit,
+                "python_version": sys.version,
+                "platform": platform.platform(),
+                "command": sys.argv,
+                "resource_measurement": {
+                    "wall_time_boundary": "before first sigma through end of breakpoint bootstrap",
+                    "peak_rss_scope": "single fresh experiment process, including imports",
+                    "method": peak_method}}
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     (output / "data" / "breakpoint_bootstrap.csv").write_text("breakpoint_sigma\n" + "\n".join(map(str, draws)) + "\n", encoding="utf-8")
     figures = output / "figures"; figures.mkdir(exist_ok=True)
