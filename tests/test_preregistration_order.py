@@ -39,3 +39,30 @@ def test_seed_amendments_precede_seed_data():
         assert git("merge-base", "--is-ancestor", amendment, data).returncode == 0, (
             f"Amendment {amendment} must precede seed data {data}."
         )
+
+
+def test_resource_gate_commit_contains_only_supplement():
+    provenance = json.loads((ROOT / "provenance" / "phase2_commits.json").read_text(encoding="utf-8"))
+    freeze = provenance["resource_gate_commit"]
+    assert git("cat-file", "-e", f"{freeze}^{{commit}}").returncode == 0, (
+        f"Required commit {freeze} is unavailable. CI must checkout with fetch-depth: 0."
+    )
+    changed = git("diff-tree", "--no-commit-id", "--name-only", "-r", freeze)
+    assert changed.returncode == 0, changed.stderr
+    assert changed.stdout.splitlines() == [provenance["resource_gate_path"]]
+
+
+def test_resource_gate_precedes_n192_data_when_registered():
+    provenance = json.loads((ROOT / "provenance" / "phase2_commits.json").read_text(encoding="utf-8"))
+    data = provenance.get("n192_resource_data_commit")
+    if data is None:
+        return
+
+    freeze = provenance["resource_gate_commit"]
+    for commit in (freeze, data):
+        assert git("cat-file", "-e", f"{commit}^{{commit}}").returncode == 0, (
+            f"Required commit {commit} is unavailable. CI must checkout with fetch-depth: 0."
+        )
+    assert git("merge-base", "--is-ancestor", freeze, data).returncode == 0, (
+        f"Resource-gate freeze {freeze} must precede N=192 data {data}."
+    )

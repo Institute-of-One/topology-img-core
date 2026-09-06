@@ -5,5 +5,7 @@
   "preregistration_path": "docs/phase2_preregistration_v1.0.md",
   "seed_amendment_v1_1_commit": "416883ebe974924f6054c0b635b5741fb0c5caf7",
   "boundary_amendment_v1_2_commit": "419c37ba1d47a4aebf40c2be1b1a3a05be293000",
-  "seed_sensitivity_data_commit": "cbe4d415ab833b4871f4076be9f1673ab5936f3b"
+  "seed_sensitivity_data_commit": "cbe4d415ab833b4871f4076be9f1673ab5936f3b",
+  "resource_gate_commit": "6739705fb5e4238d8c08a442cc7f498a65d7a285",
+  "resource_gate_path": "docs/phase2_resource_gate_supplement.md"
 }
