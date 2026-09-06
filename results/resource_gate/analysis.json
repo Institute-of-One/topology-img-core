@@ -1,0 +1,41 @@
+{
+  "resource_gate_commit": "6739705fb5e4238d8c08a442cc7f498a65d7a285",
+  "n192_data_commit": "13a856cb32b32b99cf99f213c9e4da8860dcdac0",
+  "model": "ordinary least squares of log cost on log N using N=64,96,128,192",
+  "wall_time_fit": {
+    "coefficient": 0.0016496971625792594,
+    "alpha": 2.5073875866172135
+  },
+  "peak_rss_fit": {
+    "coefficient": 45171008.56145121,
+    "alpha": 0.1235295362632848
+  },
+  "predictions": {
+    "160": {
+      "wall_time_seconds": 554.6095088731124,
+      "wall_time_hours": 0.1540581969091979,
+      "peak_rss_bytes": 84553912.22324045,
+      "peak_rss_gib": 0.07874696722555947,
+      "within_12_hours": true,
+      "within_16_gib": true
+    },
+    "224": {
+      "wall_time_seconds": 1289.3978273181294,
+      "wall_time_hours": 0.35816606314392485,
+      "peak_rss_bytes": 88142392.62239687,
+      "peak_rss_gib": 0.08208900002985901,
+      "within_12_hours": true,
+      "within_16_gib": true
+    },
+    "256": {
+      "wall_time_seconds": 1802.167784757898,
+      "wall_time_hours": 0.5006021624327495,
+      "peak_rss_bytes": 89608365.06803577,
+      "peak_rss_gib": 0.08345429326224678,
+      "within_12_hours": true,
+      "within_16_gib": true
+    }
+  },
+  "n256_gate_pass": true,
+  "selected_fifth_size": 256
+}
