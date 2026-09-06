@@ -9,7 +9,7 @@ import tomllib
 import matplotlib.pyplot as plt
 import numpy as np
 
-from experiments.refined_sigma_grid import run as run_refined
+from refined_sigma_grid import run as run_refined
 from iorn010.heterogeneity import random_effects_meta, run_level_bootstrap
 
 
@@ -60,4 +60,3 @@ def main() -> None:
 
 
 if __name__=="__main__":main()
-
